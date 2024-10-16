@@ -1,54 +1,33 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #141922;
-    color: white;
+.main-container{
+    position: relative;
+    color: #6d6d6d;
 }
 
-.main-container {
-    display: flex;
-    flex-direction: column;
+body{
     height: 100vh;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.sidebar {
-    width: 150px;
-    background-color: #000;
-    color: #6d6d6d;
-    padding: 15px;
-    position: fixed;
-    height: 100%;
+.page{
+    width: calc(100% - 150px);
+    z-index: -1;
+    background-color: #141922;
+    position: absolute;
+    right: 0;
     top: 0;
-    left: 0;
-}
-
-.sidebar a {
-    color: #6d6d6d;
-    text-decoration: none;
-}
-
-.sidebar a:hover {
-    color: white;
-}
-
-.page {
-    margin-left: 150px;
-    padding: 20px;
-}
-
-header {
-    background-color: #1db954;
-    padding: 20px;
-    text-align: center;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .header-button{
-    width: calc(100vw - 150px);
+    width: 100%;
     height: 70px;
     background-color: rgba(8,11,18,0.5);
     z-index: 1000;
@@ -57,25 +36,198 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
-    right: 0px;
+    left: 0px;
 }
 
-.content {
-    margin-top: 20px;
+.header{
+    text-align: center;
+    text-transform: uppercase;
+    color: #6d6d6d;
+    margin-top: 70px;
 }
 
-.album {
-    display: inline-block;
-    margin: 10px;
+.header span{
+    margin: 0 15px;
+    line-height: 50px;
+}
+
+.sidebar{
+    background-color: black;
+    color: #6d6d6d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: calc(100vh - 70px);
+    flex-shrink: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    padding: 15px 15px 0px 15px;
+    font-size: 12px;
+}
+
+.sidebar .fas {
+    font-size: 20px;
+    width: 20px;
+    line-height: 24px;
+    margin: 5px 10px 5px 0;
+    vertical-align: middle;
+}
+
+.sidebar .far{
+    margin-right: 10px;
+}
+
+.sidebar .fas:last-child{
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.playlist p{
+    line-height: 25px;
+}
+
+.sidebar .bottom p{
+    margin: 5px 0;
+}
+
+.sidebar .bottom p:last-child{
+    color: white;
+    font-weight: bold;
+}
+
+.profile{
+    height: 25px;
+    background: #808080;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.logo{
+    background: url(../img/logo.svg) no-repeat 50% 50%;
+    height: 50px;
+    background-size: 100%;
+}
+
+.container{
+    margin: 0 15px;
+}
+
+h2{
+    color: white;
+}
+
+h4{
+    color: white;
+    text-transform: uppercase;
+}
+
+.row{
     text-align: center;
 }
 
-footer {
+.first-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-row,
+.third-row{
+    display: flex;
+}
+
+.m-b50px{
+    margin-bottom: 50px;
+}
+
+.m-b15px{
+    margin-bottom: 15px;
+}
+
+.first-row .song:first-child,
+.second-row .song:first-child{
+    margin-left: 0;
+}
+
+.first-row .song:last-child,
+.second-row .song:last-child{
+    margin-right: 0;
+}
+
+.song{
+    width: calc(100% / 7);
+    margin: 0 10px;
+    color: white;
+}
+
+.song img{
+    object-fit: cover;
+    max-width: 100%;
+    min-width: 100px;
+    flex-grow: 1;
+}
+
+footer{
+    height: 70px;
+    width: 100%;
     background-color: #282828;
-    padding: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    color: #fff;
+    left: 0;
+}
+
+.left,
+.right {
+    width: 20%;
+    border: black 1px solid;
+    background-color: brown;
+}
+
+.center{
+    width: 40%;
+    border: black 1px solid;
+    background-color: brown;
+    flex-shrink: 2;
+}
+
+.button{
+    padding: 10px 15px;
+    border: white 1px solid;
+    border-radius: 20px;
+    text-transform: uppercase;
+    background-color: rgb(8,11,18);
+    color: white;
+}
+
+.circle{
+    border-radius: 50%;
+}
+
+
+/* MEDIUM */
+
+/* SMALL */
+
+@media screen and (max-width: 575px) {
+
+    .sidebar{
+        width: 50px;
+    }
+
+    .logo{
+        background: url(../img/logo-small.svg) no-repeat 50% 50%;
+    }
+
+    .playlist,
+    p,
+    h5 
+    hr {
+        display: none;
+    }
+
 }
