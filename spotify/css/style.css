@@ -174,42 +174,102 @@ footer{
     width: 100%;
     background-color: #282828;
     display: flex;
-    justify-content: space-between;
     z-index: 100;
     position: fixed;
     bottom: 0;
     left: 0;
 }
 
+footer h4{
+    text-transform: none;
+}
+
 .left,
 .right {
     width: 20%;
-    border: black 1px solid;
-    background-color: brown;
 }
 
-.center{
-    width: 40%;
-    border: black 1px solid;
-    background-color: brown;
-    flex-shrink: 2;
+.left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.button{
-    padding: 10px 15px;
-    border: white 1px solid;
-    border-radius: 20px;
-    text-transform: uppercase;
-    background-color: rgb(8,11,18);
+.left .far{
+    margin: 0 10px;
+}
+
+.text{
+    margin-right: 25px
+}
+
+.left img{
+    vertical-align: middle;
+    width: 50px;
+}
+
+.left .text p{
+    font-size: 12px;
+}
+
+.left a:hover{
+    text-decoration: underline;
+}
+
+footer .center{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+footer .center i{
+    margin: 0 5px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.bottom #range{
+    width: 50%;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+footer .bottom span{
+    font-size: 10px;
+}
+
+footer .center .far{
+    margin: 0 5px;
+    font-size: 20px;
+}
+
+.center .top a{
     color: white;
 }
 
-.circle{
-    border-radius: 50%;
+.center .fa-play-circle:hover{
+    font-size: 24px;
 }
 
+.right{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    line-height: 70px;
+}
 
-/* MEDIUM */
+.right i{
+    margin: 0 5px;
+}
+
+#volume{
+    vertical-align: middle;
+    width: 60%;
+}
 
 /* SMALL */
 
